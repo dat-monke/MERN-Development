@@ -33,7 +33,6 @@ class ShoppingList extends Component {
                                             onClick={this.onDeleteClick.bind(this, id)} 
                                             >&times;
                                         </Button>
-
                                         {name}
                                     </ListGroupItem>
                                 </CSSTransition> 

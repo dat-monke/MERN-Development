@@ -1,9 +1,14 @@
-import { GET_ITEMS, ADD_ITEMS, DELETE_ITEMS } from '../actions/types';
+import axios from 'axios';
+import { GET_ITEMS, ADD_ITEMS, DELETE_ITEMS, ITEMS_LOADING } from '../actions/types';
 
-export const getItems = () => {
-    return {
-        type: GET_ITEMS
-    }
+export const getItems = () => dispatch => {
+    dispatch(setItemsLoading())
+    axios.get('/api/items')
+        .then(res => 
+            dispatch({
+                type: GET_ITEMS,
+                payload: res.data
+            }))
 }
 
 export const deleteItem = (id) => {
@@ -17,5 +22,11 @@ export const addItem = (item) => {
     return {
         type: ADD_ITEMS, 
         payload: item
+    }
+}
+
+export const setItemsLoading = () => {
+    return {
+        type: ITEMS_LOADING
     }
 }
