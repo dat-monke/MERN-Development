@@ -3,6 +3,10 @@
     "version": "1.0.0",
     "description": "MERN Project Starter",
     "main": "server.js",
+    "engines": {
+        "node": "16.x",
+        "npm": "8.x"
+    },
     "scripts": {
         "client-install": "npm install --prefix client",
         "start": "node server.js",
