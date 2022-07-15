@@ -1,7 +1,7 @@
 import React, { Component } from 'react'; 
 import AppNavbar from './components/AppNavigationBar.js';
 import ShoppingList from './components/ShoppingList.js';
-import ItemModal from './components/ItemModal';
+import ItemModal from '../src/components/ItemModal.js';
 import { Container } from 'reactstrap';
 import { Provider } from 'react-redux'; 
 import store from './store.js'; 
